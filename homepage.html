@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-2hF2WnInLb9B7y5kHbF2Yx5Un1K3y1GZ1eXpcczUHHDFmRZduTo0RYD3EckHtLeFo1z2Ds1lLbXyY9fQb">
+  <link rel="" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  
+  <title>GymFitPro Dashboard</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">GymFit<span>Pro</span></div>
+    <div class="nav-links">
+      <a href="user.html">Home</a>
+      <a href="test.html">Workouts</a>
+      <a href="#">Manage Workouts</a>
+      <!-- <a href="#">Create Workout Programs</a> -->
+    </div>
+    <div class="dropdown-container">
+      <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+      <div class="dropdown" id="notifDropdown">
+        <p>No new notifications</p>
+      </div>
+    </div>
+    
+    <!-- User -->
+    <div class="dropdown-container">
+      <i class="fas fa-user-circle" onclick="toggleDropdown('userDropdown')"></i>
+      <div class="dropdown" id="userDropdown">
+        <p><a href="#">Profile</a></p>
+        <p><a href="#">Settings</a></p>
+        <p><a href="#">Logout</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <!-- <button class="pin-toggle" title="Pin Sidebar">📌</button>
+      <div class="sidebar-icon">🧰</div> -->
+  
+      <input type="text" placeholder="   Search ..." class="search-box" />
+  
+      <div class="filter-section">
+        <h3 class="filter-title">TYPE <span class="toggle-icon">▼</span></h3>
+        <div class="filter-options">
+          <input type="checkbox" id="everything" />
+          <label for="everything">Everything (29)</label>
+  
+          <input type="checkbox" id="strength" />
+          <label for="strength">Strength (22)</label>
+  
+          <input type="checkbox" id="cardio" />
+          <label for="cardio">Cardio (16)</label>
+  
+          <input type="checkbox" id="interval" />
+          <label for="interval">Interval training (8)</label>
+  
+          <input type="checkbox" id="combat" />
+          <label for="combat">Combat (5)</label>
+  
+          <input type="checkbox" id="rpg" />
+          <label for="rpg">RPG fitness (10)</label>
+  
+          <input type="checkbox" id="running" />
+          <label for="running">Running (8)</label>
+  
+          <input type="checkbox" id="addon" />
+          <label for="addon">Add-on (13)</label>
+        </div>
+          
+        <h3 class="filter-title">DIFFICULTY</h3>
+        <div class="filter-options">
+          <input type="checkbox" id="light" />
+          <label for="light">Light (8)</label>
+  
+          <input type="checkbox" id="easy" />
+          <label for="easy">Easy (8)</label>
+  
+          <input type="checkbox" id="normal" />
+          <label for="normal">Normal (32)</label>
+  
+          <input type="checkbox" id="hard" />
+          <label for="hard">Hard (26)</label>
+  
+          <input type="checkbox" id="advanced" />
+          <label for="advanced">Advanced (10)</label>
+        </div>
+  
+        <h3 class="filter-title">EQUIPMENT</h3>
+        <div class="filter-options">
+          <input type="checkbox" id="equipment-yes" />
+          <label for="equipment-yes">Yes (17)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      
+  
+
+
+<div class="card-container">
+  <div class="card">
+    <div class="tag">NEW</div>
+    <img src="/ASSETS/IMAGES/kobe-kian-clata-1iuR19qL7EY-unsplash.jpg" alt="Momentum Exercise" class="card-image" />
+    <h2 class="card-title">MOMENTUM EXERCISE</h2>
+    <p class="card-subtitle">GENERAL FITNESS</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">EXTRA<br><span>ab work</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>MEDIUM - HIGH</span><br><small>Suitable for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="Total Body and Strengths" class="card-image" />
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH+</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">🛠️<br><span>Equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Suitable for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/Cardio.jpg" alt="30 Days of Cardio" class="card-image" />
+    <h2 class="card-title">30 DAYS OF<br>CARDIO </h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">AT HOME<br><span>CARDIO</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>EASY</span><br><small>Perfect for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="30 Days of Cardio" class="card-image" />
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Suitable for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="30 Days of Cardio" class="card-image" />
+   
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Suitable for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">   
+   <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="30 Days of Cardio" class="card-image" />
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Not for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="30 Days of Cardio" class="card-image" />
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Not for beginners</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="30 Days of Cardio" class="card-image" />
+    <h2 class="card-title">TOTAL BODY<br>STRENGTH</h2>
+    <p class="card-subtitle">STRENGTH & TONE</p>
+    <div class="card-info">
+      <div class="info-box">30<br><span>days</span></div>
+      <div class="info-box">NO<br><span>equipment</span></div>
+      <div class="info-box">FUNCTIONAL<br><span>STRENGTH</span></div>
+      <div class="info-box danger">DIFFICULTY<br><span>HIGH</span><br><small>Not for beginners</small></div>
+    </div>
+  </div>
+  <script>
+    // Dropdown toggle (for notifications and user menu)
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const allDropdowns = document.querySelectorAll('.dropdown');
+  
+      allDropdowns.forEach(el => {
+        if (el !== dropdown) el.style.display = 'none';
+      });
+  
+      dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
+    }
+  
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.fa-bell') && !e.target.matches('.fa-user-circle')) {
+        document.querySelectorAll('.dropdown').forEach(drop => drop.style.display = 'none');
+      }
+    });
+  
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workout Growth Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="CSS/tracker.css" />
+</head>
+<body>
+
+  <h1>Workout Growth Tracker</h1>
+
+  <div class="tracker-form">
+    <label for="workoutType">Workout Type</label>
+    <select id="workoutType">
+      <option value="Leg Day">Leg Day</option>
+      <option value="Upper Body">Upper Body</option>
+      <option value="Core">Core</option>
+      <option value="Push">Push</option>
+      <option value="Pull">Pull</option>
+    </select>
+
+    <label for="date">Date</label>
+    <input type="date" id="date" />
+
+    <label for="weight">Weight (kg)</label>
+    <input type="number" id="weight" placeholder="e.g. 60" />
+
+    <label for="reps">Reps</label>
+    <input type="number" id="reps" placeholder="e.g. 12" />
+
+    <label for="notes">Notes</label>
+    <textarea id="notes" rows="3" placeholder="Any comments or notes..."></textarea>
+
+    <button onclick="addEntry()">Add Entry</button>
+  </div>
+
+  <table id="entriesTable">
+    <thead>
+      <tr>
+        <th>Workout</th>
+        <th>Date</th>
+        <th>Weight</th>
+        <th>Reps</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="chart-container">
+    <canvas id="growthChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    const chartData = {
+      labels: [],
+      datasets: [
+        {
+          label: 'Weight (kg)',
+          data: [],
+          backgroundColor: 'rgba(255, 107, 0, 0.2)',
+          borderColor: '#ff6b00',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3
+        }
+      ]
+    };
+
+    const growthChart = new Chart(ctx, {
+      type: 'line',
+      data: chartData,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: 'white'
+            },
+            title: {
+              display: true,
+              text: 'Date',
+              color: 'white'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: 'white'
+            },
+            title: {
+              display: true,
+              text: 'Weight (kg)',
+              color: 'white'
+            }
+          }
+        }
+      }
+    });
+
+    function addEntry() {
+      const workout = document.getElementById('workoutType').value;
+      const date = document.getElementById('date').value;
+      const weight = document.getElementById('weight').value;
+      const reps = document.getElementById('reps').value;
+      const notes = document.getElementById('notes').value;
+
+      if (!date || !weight || !reps) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      const table = document.querySelector('#entriesTable tbody');
+      const row = table.insertRow();
+      row.innerHTML = `
+        <td>${workout}</td>
+        <td>${date}</td>
+        <td>${weight} kg</td>
+        <td>${reps}</td>
+        <td>${notes}</td>
+      `;
+
+      chartData.labels.push(date);
+      chartData.datasets[0].data.push(weight);
+      growthChart.update();
+
+      document.getElementById('date').value = '';
+      document.getElementById('weight').value = '';
+      document.getElementById('reps').value = '';
+      document.getElementById('notes').value = '';
+    }
+  </script>
+</body>
+</html>

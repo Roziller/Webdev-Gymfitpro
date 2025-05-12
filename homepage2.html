@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/homepage2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Home</title>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">GymFit<span>Pro</span></div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Workouts</a>
+      <a href="#">Manage Workouts</a>
+    </div>
+
+    <div class="topbar-icons">
+      <div class="dropdown-container">
+        <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+        <div class="dropdown" id="notifDropdown" style="display: none;">
+          <p>No new notifications</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h2>Suggested Gyms Near You</h2>
+
+    <div class="gym-grid">
+
+      <!-- Gym 1 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/10062023-CS_Ben_sGym_Photo_15.jpg" alt="Gym 1">
+        <div class="gym-info">
+          <h3>Ben's Fitness Gym</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Ayala, Zone 1</div>
+          <div class="badges">
+            <span class="badge">Premium</span>
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('Ben\'s Fitness Gym', 'Ayala, Zone 1', 'State-of-the-art equipment, sauna, and personal trainers available. ₱80 Walk-in, ₱700- Monthly Open 5 AM - 11 PM daily.')">Select</button>
+        </div>
+      </div>
+
+      <!-- Gym 2 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/samuel-girven-CeJuNGDjHAM-unsplash.jpg" alt="Gym 2">
+        <div class="gym-info">
+          <h3>PJ Gym</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Recodo, Zamboanga City</div>
+          <div class="badges">
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('PJ Gym', 'Recodo, Zamboanga City', 'Affordable membership plans, strong community vibes, CrossFit programs available. ₱80 Walk-in, ₱700- Monthly Open 6 AM - 10 PM.')">Select</button>
+        </div>
+      </div>
+
+      <!-- Gym 3 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/OIP (3).jpg" alt="Gym 3">
+        <div class="gym-info">
+          <h3>StrongMan Gym</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Baliwasan, Zamboanga City</div>
+          <div class="badges">
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('StrongMan Gym', 'Baliwasan, Zamboanga City', 'Perfect for bodybuilders and strength training. Full range of free weights. ₱80 Walk-in, ₱700- Monthly Open 24/7.')">Select</button>
+        </div>
+      </div>
+
+      <!-- Gym 4 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/logan-weaver-lgnwvr-apyd8hWmIw0-unsplash.jpg" alt="Gym 4">
+        <div class="gym-info">
+          <h3>Fitness Culture</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> SM Mindpro, Zamboanga City</div>
+          <div class="badges">
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('Fitness Culture', 'SM Mindpro, Zamboanga City', 'Premium cardio machines, spinning classes, yoga sessions.  ₱80 Walk-in, ₱700- Monthly Open 7 AM - 9 PM.')">Select</button>
+        </div>
+      </div>
+
+      <!-- Gym 5 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/victor-freitas-JbI04nYfaJk-unsplash.jpg" alt="Gym 5">
+        <div class="gym-info">
+          <h3>Urban Rogue</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Sta.Maria, Zamboanga City</div>
+          <div class="badges">
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('Urban Rogue', 'Sta.Maria, Zamboanga City', 'Focus on functional fitness, HIIT training zones. ₱80 Walk-in, ₱700- Monthly Open 6 AM - 10 PM.')">Select</button>
+        </div>
+      </div>
+
+      <!-- Gym 6 -->
+      <div class="gym-card">
+        <img src="ASSETS/IMAGES/kobe-kian-clata-1iuR19qL7EY-unsplash.jpg" alt="Gym 6">
+        <div class="gym-info">
+          <h3>Bakal Gym</h3>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Divisoria, Zamboanga City</div>
+          <div class="badges">
+            <span class="badge standard">Standard</span>
+          </div>
+          <button class="select-button" onclick="openModal('Bakal Gym', 'Divisoria, Zamboanga City', 'Old-school hardcore gym. Powerlifting and strength training. No fancy equipment, just results! ₱80 Walk-in, ₱700- Monthly Open 8 AM - 8 PM.')">Select</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="gymModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Gym Name</h2>
+      <p id="modalLocation">Location</p>
+      <p id="modalDescription">Gym Description</p>
+      <button class="select-button" onclick="confirmSelection()">Confirm Selection</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      var dropdown = document.getElementById(id);
+      dropdown.style.display = (dropdown.style.display === "none" || dropdown.style.display === "") ? "block" : "none";
+    }
+
+    function openModal(gymName, location, description) {
+      document.getElementById("modalTitle").textContent = gymName;
+      document.getElementById("modalLocation").textContent = location;
+      document.getElementById("modalDescription").textContent = description;
+      document.getElementById("gymModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("gymModal").style.display = "none";
+    }
+
+    function confirmSelection() {
+      alert("You have successfully selected your gym!");
+      closeModal();
+    }
+
+    function confirmSelection() {
+      alert("You have successfully selected your gym!");
+      window.location.href = "signup.html";  // Redirect to the signup page
+      closeModal();
+    }
+
+    window.onclick = function(event) {
+      var modal = document.getElementById("gymModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>

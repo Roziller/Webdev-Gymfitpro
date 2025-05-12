@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Dashboard</title>
+    <link rel="stylesheet" href="CSS/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-cog fa-2x" style="color: #ff6b00;"></i>
+            <div class="logo-text">
+                <span class="brand-name">Dash<span class="highlight">Board</span></span>
+                <span class="admin">Admin Panel</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="gymadmin-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="settings.html" style="color: #ff6b00;"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="topbar">
+            <div class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="topbar-icons">
+                <div class="dropdown-container">
+                    <i class="fas fa-bell"></i>
+                    <div class="dropdown">
+                        <p><a href="#">New user registered</a></p>
+                        <p><a href="#">System update completed</a></p>
+                        <p><a href="#">Security alert</a></p>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <i class="fas fa-envelope"></i>
+                    <div class="dropdown">
+                        <p><a href="#">New message from admin</a></p>
+                        <p><a href="#">Support request #1289</a></p>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="dropdown">
+                        <p><a href="gymadmin-profile.html">My Profile</a></p>
+                        <p><a href="settings.html">Settings</a></p>
+                        <p><a href="login.html">Logout</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Container -->
+        <div class="profile-container">
+            <h1>Settings</h1>
+            <p style="margin-bottom: 20px; color: #ccc;">Manage your account settings and preferences</p>
+
+            <!-- Settings Sections -->
+            <div class="settings-sections">
+                <!-- Account Settings -->
+                <div class="settings-section">
+                    <h2>Account Settings</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" value="admin_user" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="admin@example.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Current Password</label>
+                            <input type="password" id="password" placeholder="Enter current password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password" placeholder="Enter new password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm new password" class="form-control">
+                        </div>
+                        <button class="btn">Update Account</button>
+                    </div>
+                </div>
+
+                <!-- Profile Settings -->
+                <div class="settings-section">
+                    <h2>Profile Settings</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" value="Admin User" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" class="form-control" rows="4">Dashboard administrator with extensive experience in system management and user support.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" value="New York, USA" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" value="https://example.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Profile Picture</label>
+                            <div class="profile-pic-upload">
+                                <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic-preview">
+                                <input type="file" id="profile-pic" class="form-control-file">
+                                <label for="profile-pic" class="btn" style="margin-top: 10px;">Choose File</label>
+                            </div>
+                        </div>
+                        <button class="btn">Update Profile</button>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="settings-section">
+                    <h2>Notification Settings</h2>
+                    <div class="settings-form">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="email-notifications" checked>
+                            <label for="email-notifications">Email Notifications</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="push-notifications" checked>
+                            <label for="push-notifications">Push Notifications</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="system-alerts" checked>
+                            <label for="system-alerts">System Alerts</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="security-alerts" checked>
+                            <label for="security-alerts">Security Alerts</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="marketing-emails">
+                            <label for="marketing-emails">Marketing Emails</label>
+                        </div>
+                        <button class="btn">Save Notification Settings</button>
+                    </div>
+                </div>
+
+                <!-- Privacy Settings -->
+                <div class="settings-section">
+                    <h2>Privacy Settings</h2>
+                    <div class="settings-form">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="profile-visibility" checked>
+                            <label for="profile-visibility">Public Profile Visibility</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="show-email">
+                            <label for="show-email">Show Email to Other Users</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="show-activity" checked>
+                            <label for="show-activity">Show Activity Status</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="data-collection" checked>
+                            <label for="data-collection">Allow Data Collection for System Improvement</label>
+                        </div>
+                        <button class="btn">Save Privacy Settings</button>
+                    </div>
+                </div>
+
+                <!-- Danger Zone -->
+                <div class="settings-section danger-zone">
+                    <h2>Danger Zone</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <button class="btn btn-danger">Delete Account</button>
+                            <p class="help-text">This action cannot be undone. All your data will be permanently deleted.</p>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-warning">Reset All Settings</button>
+                            <p class="help-text">This will reset all your settings to default values.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar toggle functionality
+        document.querySelector('.toggle-sidebar').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // For demonstration purposes - show/hide dropdowns
+        document.querySelectorAll('.dropdown-container').forEach(container => {
+            container.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.querySelector('.dropdown').style.display = 
+                    this.querySelector('.dropdown').style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Close dropdowns when clicking elsewhere
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

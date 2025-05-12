@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymFitPro Admin Dashboard</title>
+  <link rel="stylesheet" href="CSS/admin.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <span>GymFit<span class="highlight">Pro</span>    
+      <h3><span class="admin">ADMIN</span></h3>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-users"></i> Manage Users</a></li>
+        <li><a href="#"><i class="fas fa-dumbbell"></i> Manage Workouts</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule Appointments</a></li>
+        <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="topbar">
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+    
+      <div class="topbar-icons">
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+    
+        <div class="dropdown-container">
+          <i class="fas fa-user-shield" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="#">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="#" id="logoutBtn">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      
+
+    
+    <!-- Admin Content -->
+    <div class="dashboard-content">
+      <div class="card welcome-card">
+        <h2>Welcome, Admin</h2>
+        <p class="subtext">System Overview</p>
+        
+        
+      
+         
+      
+          <div class="overview-item">
+            <i class="fas fa-code-branch"></i>
+            <div>
+              <p class="overview-title">App Version</p>
+              <p class="overview-value">v2.5.1</p>
+            </div>
+          </div>
+      
+          <div class="overview-item">
+            <i class="fas fa-user-shield"></i>
+            <div>
+              <p class="overview-title">Active Admins</p>
+              <p class="overview-value">5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="card">
+        <h3>User Overview</h3>
+        <div class="recommendations">
+          <div class="recommend-card">Total Members: 1,542</div>
+          <div class="recommend-card">Active Memberships: 1,201</div>
+          <div class="recommend-card">Pending Approvals: 23</div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <h3>New Signups (2025)</h3>
+        <canvas id="signupChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+
+    // Dropdown toggle (for notifications and user menu)
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const allDropdowns = document.querySelectorAll('.dropdown');
+  
+      allDropdowns.forEach(el => {
+        if (el !== dropdown) el.style.display = 'none';
+      });
+  
+      dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
+    }
+    // Function to handle logout
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Clear localStorage or sessionStorage if you used them for user session
+    localStorage.removeItem('user');  // Example if you're using localStorage
+    sessionStorage.removeItem('user');  // If you're using sessionStorage
+
+    // Optionally, you can also clear cookies if your session is stored in cookies
+    // document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    // Redirect to login page (or homepage if you don't have a login page)
+    window.location.href = 'login.html';  // Change to your actual login page path
+  });
+  
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.fa-bell') && !e.target.matches('.fa-user-shield')) {
+        document.querySelectorAll('.dropdown').forEach(drop => drop.style.display = 'none');
+      }
+    });
+    
+    // Chart.js Bar Chart
+    const signupCtx = document.getElementById('signupChart').getContext('2d');
+    const signupChart = new Chart(signupCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'New Signups',
+          data: [220, 270, 300, 280, 350, 400],
+          backgroundColor: 'rgba(255, 107, 0, 0.8)',
+          borderRadius: 5
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+          },
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: 'white' }
+          },
+          tooltip: {
+            backgroundColor: '#333',
+            titleColor: '#ff6b00',
+            bodyColor: '#fff'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

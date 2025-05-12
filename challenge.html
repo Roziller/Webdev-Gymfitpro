@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/guide.css">
+    <link rel="stylesheet" href="CSS/challenge-detail.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item">HOME</a>
+                    <a href="test.html" class="nav-item">WORKOUT</a>
+                    <a href="plans.html" class="nav-item">PLANS</a>
+                    <a href="challenges.html" class="nav-item active">CHALLENGES</a>
+                    <a href="guides.html" class="nav-item">GUIDES</a>
+                    <a href="community.html" class="nav-item">COMMUNITY</a>
+                </div>
+                <div class="nav-buttons">
+                    <a href="bookmark.html" class="btn btn-primary">MY BOOKMARKS</a>
+                    <a href="donation.html" class="btn btn-secondary">DONATE</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content challenge-detail-page">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <a href="challenges.html">Challenges</a> 
+                <i class="fas fa-chevron-right"></i> 
+                <span class="current-page">Challenge Name</span>
+            </div>
+
+            <!-- Challenge Hero Section -->
+            <section class="challenge-hero">
+                <div class="challenge-hero-image">
+                    <img src="ASSETS/IMAGES/MORE/challenge-hero.jpg" alt="Challenge Name" class="hero-img">
+                    <div class="challenge-overlay">
+                        <h1 class="challenge-title">Challenge Name</h1>
+                        <div class="challenge-meta">
+                            <div class="challenge-tags">
+                                <span class="tag tag-strength">Strength</span>
+                                <span class="tag tag-normal">Normal</span>
+                                <span class="tag tag-none">No Equipment</span>
+                            </div>
+                            <div class="challenge-actions">
+                                <button class="btn-favorite" aria-label="Add to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-share" aria-label="Share this challenge">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="btn-print" aria-label="Print this challenge">
+                                    <i class="fas fa-print"></i>
+                                </button>
+                                <button class="btn-add-calendar" aria-label="Add to calendar">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenge Information -->
+            <section class="challenge-info-container">
+                <div class="challenge-details">
+                    <div class="challenge-description">
+                        <h2>About This Challenge</h2>
+                        <p>This 30-day challenge is designed to help you build strength, endurance, and confidence. Each day presents a new set of exercises that progressively increase in intensity to help you achieve your fitness goals.</p>
+                        
+                        <div class="challenge-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Duration: 30 days</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Time per day: 15-30 minutes</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Equipment: None required</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Calories: ~150-300 per session</span>
+                            </div>
+                        </div>
+                        
+                        <h3>What You'll Achieve</h3>
+                        <ul class="challenge-benefits">
+                            <li>Increased core strength and stability</li>
+                            <li>Improved muscle tone and definition</li>
+                            <li>Enhanced endurance and stamina</li>
+                            <li>Better posture and body alignment</li>
+                            <li>Boosted confidence and mental resilience</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="challenge-cta">
+                        <a href="#challenge-schedule" class="btn btn-primary btn-lg">Start Challenge</a>
+                        <a href="#" class="btn btn-secondary btn-lg">Download Plan</a>
+                    </div>
+                </div>
+                
+                <!-- How to Use This Challenge -->
+                <div class="challenge-instructions">
+                    <h2>How to Use This Challenge</h2>
+                    <div class="instruction-steps">
+                        <div class="instruction-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Follow the Schedule</h4>
+                                <p>Complete each day's workout as shown in the calendar below. Try to do them in order, but if you miss a day, just continue from where you left off.</p>
+                            </div>
+                        </div>
+                        <div class="instruction-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Track Your Progress</h4>
+                                <p>Mark completed days to stay motivated and see your journey. Take before and after photos to visualize your transformation.</p>
+                            </div>
+                        </div>
+                        <div class="instruction-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Listen to Your Body</h4>
+                                <p>Modify exercises as needed. If something feels too difficult, it's okay to take a break or adjust the intensity.</p>
+                            </div>
+                        </div>
+                        <div class="instruction-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Stay Consistent</h4>
+                                <p>Consistency is key to seeing results. Try to stick with the challenge even on days when motivation is low.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenge Schedule/Calendar -->
+            <section id="challenge-schedule" class="challenge-schedule">
+                <h2>30-Day Challenge Schedule</h2>
+                <div class="calendar-container">
+                    <div class="calendar-navigation">
+                        <button class="btn-prev-week" aria-label="Previous week">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="calendar-week">Week 1</span>
+                        <button class="btn-next-week" aria-label="Next week">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <!-- Week 1 -->
+                        <div class="calendar-week-container active" data-week="1">
+                            <!-- Day 1 -->
+                            <div class="calendar-day">
+                                <div class="day-header">
+                                    <span class="day-number">Day 1</span>
+                                    <button class="btn-complete" aria-label="Mark as complete">
+                                        <i class="far fa-circle-o"></i>
+                                    </button>
+                                </div>
+                                <div class="day-content">
+                                    <div class="workout-item">
+                                        <span class="exercise">10 Squats</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">5 Push-ups</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">20 sec Plank</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">10 Jumping Jacks</span>
+                                    </div>
+                                </div>
+                                <div class="day-footer">
+                                    <button class="btn-view-exercise" data-day="1">
+                                        View Exercise Details
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 2 -->
+                            <div class="calendar-day">
+                                <div class="day-header">
+                                    <span class="day-number">Day 2</span>
+                                    <button class="btn-complete" aria-label="Mark as complete">
+                                        <i class="far fa-circle-o"></i>
+                                    </button>
+                                </div>
+                                <div class="day-content">
+                                    <div class="workout-item">
+                                        <span class="exercise">12 Squats</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">6 Push-ups</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">25 sec Plank</span>
+                                    </div>
+                                    <div class="workout-item">
+                                        <span class="exercise">15 Jumping Jacks</span>
+                                    </div>
+                                </div>
+                                <div class="day-footer">
+                                    <button class="btn-view-exercise" data-day="2">
+                                        View Exercise Details
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Days 3-7 would follow the same pattern -->
+                            <!-- Only showing 2 days as an example -->
+                        </div>
+                        
+                        <!-- Week 2 -->
+                        <div class="calendar-week-container" data-week="2">
+                            <!-- Days 8-14 would go here -->
+                        </div>
+                        
+                        <!-- Week 3 -->
+                        <div class="calendar-week-container" data-week="3">
+                            <!-- Days 15-21 would go here -->
+                        </div>
+                        
+                        <!-- Week 4 -->
+                        <div class="calendar-week-container" data-week="4">
+                            <!-- Days 22-28 would go here -->
+                        </div>
+                        
+                        <!-- Week 5 (if needed) -->
+                        <div class="calendar-week-container" data-week="5">
+                            <!-- Days 29-30 would go here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-progress">
+                    <h3>Your Progress</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span class="days-completed">0 days completed</span>
+                        <span class="days-remaining">30 days remaining</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Exercise Detail Modal -->
+            <div id="exercise-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Day <span id="modal-day-number">1</span> Exercises</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Exercise details will be loaded dynamically -->
+                        <div class="exercise-detail">
+                            <h4>Squats</h4>
+                            <div class="exercise-media">
+                                <img src="ASSETS/IMAGES/EXERCISES/squat.jpg" alt="How to do a squat">
+                            </div>
+                            <div class="exercise-instructions">
+                                <h5>How to perform:</h5>
+                                <ol>
+                                    <li>Stand with feet shoulder-width apart</li>
+                                    <li>Lower your body as if sitting in a chair</li>
+                                    <li>Keep your chest up and knees tracking over toes</li>
+                                    <li>Push through heels to return to standing</li>
+                                </ol>
+                                <div class="exercise-tips">
+                                    <h5>Tips:</h5>
+                                    <ul>
+                                        <li>Keep your weight in your heels</li>
+                                        <li>Don't let your knees go past your toes</li>
+                                        <li>Engage your core throughout the movement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- More exercise details would follow -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary mark-complete-btn">Mark Day Complete</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Community Section -->
+            <section class="challenge-community">
+                <h2>Join the Community</h2>
+                <p>Connect with others taking this challenge! Share your progress, get motivation, and celebrate achievements together.</p>
+                
+                <div class="community-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2.5k+</span>
+                        <span class="stat-label">Active Participants</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">89%</span>
+                        <span class="stat-label">Completion Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.8/5</span>
+                        <span class="stat-label">User Rating</span>
+                    </div>
+                </div>
+                
+                <div class="social-share">
+                    <p>Share your journey using #GymFitPro</p>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-btn tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Rating Section -->
+                <div class="challenge-rating">
+                    <h3>Rate This Challenge</h3>
+                    <div class="rating-stars">
+                        <button class="rating-star" aria-label="Rate 1 star">
+                            <i class="far fa-star"></i>
+                        </button>
+                        <button class="rating-star" aria-label="Rate 2 stars">
+                            <i class="far fa-star"></i>
+                        </button>
+                        <button class="rating-star" aria-label="Rate 3 stars">
+                            <i class="far fa-star"></i>
+                        </button>
+                        <button class="rating-star" aria-label="Rate 4 stars">
+                            <i class="far fa-star"></i>
+                        </button>
+                        <button class="rating-star" aria-label="Rate 5 stars">
+                            <i class="far fa-star"></i>
+                        </button>
+                    </div>
+                    <div class="rating-message" style="display: none;"></div>
+                </div>
+            </section>
+            
+            <!-- Related Challenges -->
+            <section class="related-challenges">
+                <h2>You Might Also Like</h2>
+                <div class="related-challenges-grid">
+                    <!-- Related Challenge 1 -->
+                    <div class="challenge-card">
+                        <div class="challenge-image">
+                            <img src="ASSETS/IMAGES/MORE/ninja-intro.jpg" alt="Ninja">
+                        </div>
+                        <div class="challenge-info">
+                            <h3 class="challenge-title">Ninja</h3>
+                            <div class="challenge-tags">
+                                <span class="tag tag-strength">Strength</span>
+                                <span class="tag tag-hard">Hard</span>
+                                <span class="tag tag-none">No Equipment</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Challenge 2 -->
+                    <div class="challenge-card">
+                        <div class="challenge-image">
+                            <img src="ASSETS/IMAGES/MORE/amazon-intro.jpg" alt="Amazon">
+                        </div>
+                        <div class="challenge-info">
+                            <h3 class="challenge-title">Amazon</h3>
+                            <div class="challenge-tags">
+                                <span class="tag tag-strength">Strength</span>
+                                <span class="tag tag-normal">Normal</span>
+                                <span class="tag tag-none">No Equipment</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Challenge 3 -->
+                    <div class="challenge-card">
+                        <div class="challenge-image">
+                            <img src="ASSETS/IMAGES/MORE/guardian-intro.jpg" alt="Guardian">
+                        </div>
+                        <div class="challenge-info">
+                            <h3 class="challenge-title">Guardian</h3>
+                            <div class="challenge-tags">
+                                <span class="tag tag-cardio">Cardio</span>
+                                <span class="tag tag-hard">Hard</span>
+                                <span class="tag tag-none">No Equipment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+    <script src="challenge-detail.js"></script>
+</body>
+</html>

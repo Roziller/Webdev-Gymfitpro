@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - GymFitPro</title>
+  <link rel="stylesheet" href="/CSS/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to GymFitPro</h2>
+    <form onsubmit="return login()" method="post">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="Enter email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="extra-links">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      <p><a href="#">Forgot password?</a></p>
+    </div>
+  </div>
+</body>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+
+      // Check for admin credentials
+      if (email === "admin@gymfitpro.com" && pass === "admin123") {
+        window.location.href = "admin.html";
+        return false;
+      }
+      // Check for user credentials (add your real user credentials here)
+      else if (email === "user@gymfitpro" && pass === "user123") {
+        window.location.href = "user.html"; // Redirect to user page
+        return false;
+      }
+      // Check for gym owner credentials
+      else if (email === "owner@gymfitpro" && pass === "owner123") {
+        window.location.href = "owner-admin.html"; // Redirect to owner page
+        return false;
+    }
+
+      else {
+        alert("Invalid credentials!");
+        return false;
+      }
+    };
+  </script>
+
+</html>

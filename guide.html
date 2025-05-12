@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFitPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/guide.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item active">HOME</a>
+                    <a href="workout.html" class="nav-item">WORKOUT</a>
+                    <a href="plans.html" class="nav-item">PLANS</a>
+                    <a href="challenges.html" class="nav-item">CHALLENGES</a>
+                    <a href="guide.html" class="nav-item">GUIDES</a>
+                    <a href="community.html" class="nav-item">COMMUNITY</a>
+                </div>
+                <div class="nav-buttons">
+                    <a href="bookmark.html" class="btn btn-primary">MY BOOKMARKS</a>
+                    <a href="donation.html" class="btn btn-secondary">DONATE</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Sidebar with Filters -->
+            <aside class="sidebar">
+                <div class="search-box">
+                    <input type="text" placeholder="Search ...">
+                </div>
+
+                <!-- Type Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        TYPE <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-everything" checked>
+                            <label for="filter-everything">Everything <span>(29)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-strength" checked>
+                            <label for="filter-strength">Strength <span>(22)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-cardio" checked>
+                            <label for="filter-cardio">Cardio <span>(16)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-interval" checked>
+                            <label for="filter-interval">Interval training <span>(8)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-combat" checked>
+                            <label for="filter-combat">Combat <span>(5)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-rpg" checked>
+                            <label for="filter-rpg">RPG fitness <span>(10)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-running" checked>
+                            <label for="filter-running">Running <span>(8)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-addon" checked>
+                            <label for="filter-addon">Addon <span>(13)</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Difficulty Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        DIFFICULTY <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-light" checked>
+                            <label for="filter-light">Light <span>(8)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-easy" checked>
+                            <label for="filter-easy">Easy <span>(8)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-normal" checked>
+                            <label for="filter-normal">Normal <span>(32)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-hard" checked>
+                            <label for="filter-hard">Hard <span>(26)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-advanced" checked>
+                            <label for="filter-advanced">Advanced <span>(10)</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        EQUIPMENT <i class="fas fa-chevron-down"></i>
+                    </h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-none" checked>
+                            <label for="filter-none">None <span>(42)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-minimal" checked>
+                            <label for="filter-minimal">Minimal <span>(12)</span></label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="filter-standard" checked>
+                            <label for="filter-standard">Standard <span>(8)</span></label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Challenge Cards Grid -->
+            <section class="challenges-grid">
+                <!-- Challenge Card 1 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="/ASSETS/IMAGES/MORE/amazon-intro.jpg" alt="Amazon">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Amazon</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-normal">Normal</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 2 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/assassin-intro.jpg" alt="Assassin">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Assassin</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-hard">Hard</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 3 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="/ASSETS/IMAGES/MORE/valkyrie-intro.jpg" alt="Valkyrie">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Valkyrie</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-normal">Normal</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 4 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/fighter-intro.jpg" alt="Fighter">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Fighter</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-cardio">Cardio</span>
+                            <span class="tag tag-easy">Easy</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 5 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/knight-intro.jpg" alt="Knight">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Knight</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-cardio">Cardio</span>
+                            <span class="tag tag-light">Light</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 6 -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/ninja-intro.jpg  " alt="Ninja">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Power Pose 30-Day Challenge</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-normal">Normal</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Challenge Cards -->
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/gladiator-intro.jpg" alt="Gladiator">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Gladiator</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-normal">Normal</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/guardian-intro.jpg" alt="Guardian">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Guardian</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-cardio">Cardio</span>
+                            <span class="tag tag-hard">Hard</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <div class="challenge-image">
+                        <img src="ASSETS/IMAGES/MORE/spartan-intro.jpg" alt="Spartan">
+                    </div>
+                    <div class="challenge-info">
+                        <h3 class="challenge-title">Spartan</h3>
+                        <div class="challenge-tags">
+                            <span class="tag tag-strength">Strength</span>
+                            <span class="tag tag-normal">Normal</span>
+                            <span class="tag tag-none">No Equipment</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>

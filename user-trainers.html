@@ -1,0 +1,151 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Our Trainers</title>
+
+  <!-- Correct Font Awesome Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="CSS/coaches.css">
+</head>
+
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <span>GymFit<span class="highlight">Pro</span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="user-trainers.html"><i class="fas fa-id-card"></i> Trainers</a></li>
+        <li><a href="homepage.html"><i class="fas fa-dumbbell"></i> Workout Programs</a></li>
+        <li><a href="test.html"><i class="fas fa-calendar-check"></i> Plans & Guides</a></li>
+        <li><a href="challenges.html"><i class="fas fa-trophy"></i> Challenges</a></li>
+        <li><a href="#"><i class="fas fa-bookmark"></i> Saved Workouts</a></li>
+        
+        
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <!-- Navbar -->
+    <header class="topbar">
+      <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      <div class="topbar-icons">
+        <!-- Notifications -->
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+
+        <!-- User -->
+        <div class="dropdown-container">
+          <i class="fas fa-user-circle" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="profile.html">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="#" onclick="logout()">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+      <h1>Your Coaches</h1>
+
+      <div class="trainers-grid">
+        <!-- Trainer Cards -->
+        <div class="trainer-card" onclick="openModal('Alex Smith', 'Strength & Conditioning Coach', 'ASSETS/IMAGES/sergio-kian-PvFXCHXemN4-unsplash.jpg')">
+          <img src="ASSETS/IMAGES/sergio-kian-PvFXCHXemN4-unsplash.jpg" alt="Trainer 1">
+          <h3>Alex Smith</h3>
+          <p>Strength & Conditioning</p>
+        </div>
+      
+        <div class="trainer-card" onclick="openModal('Maria Garcia', 'Yoga Specialist', 'ASSETS/IMAGES/ivan-kazlouskij-OGtbwrMw7ZE-unsplash.jpg')">
+          <img src="ASSETS/IMAGES/ivan-kazlouskij-OGtbwrMw7ZE-unsplash.jpg" alt="Trainer 2">
+          <h3>Maria Garcia</h3>
+          <p>Yoga Specialist</p>
+        </div>
+      
+        <div class="trainer-card" onclick="openModal('John Doe', 'Personal Trainer', 'ASSETS/IMAGES/kristian-angelo-f5WygrbMAkw-unsplash.jpg')">
+          <img src="ASSETS/IMAGES/kristian-angelo-f5WygrbMAkw-unsplash.jpg" alt="Trainer 3">
+          <h3>John Doe</h3>
+          <p>Personal Trainer</p>
+        </div>
+      
+        <div class="trainer-card" onclick="openModal('Sarah Lee', 'Pilates Expert', 'ASSETS/IMAGES/brian-lawson-iUP8JN6puPU-unsplash.jpg')">
+          <img src="ASSETS/IMAGES/brian-lawson-iUP8JN6puPU-unsplash.jpg" alt="Trainer 4">
+          <h3>Sarah Lee</h3>
+          <p>Pilates Expert</p>
+        </div>
+      </div>
+      
+
+  <!-- Modal -->
+  <div id="trainerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="Trainer">
+      <h2 id="modalName"></h2>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+     // Logout function
+     function logout() {
+    // You can customize this part:
+       alert('You have been logged out!');
+  
+  // Example: Redirect to login page (adjust the link as needed)
+  window.location.href = 'login.html'; 
+    }
+    function openModal(name, desc, img) {
+      document.getElementById('modalName').innerText = name;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalImg').src = img;
+      document.getElementById('trainerModal').style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById('trainerModal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('trainerModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

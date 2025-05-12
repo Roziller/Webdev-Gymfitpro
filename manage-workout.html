@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymFitPro Admin Dashboard</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="CSS/manage-workout.css" />
+
+  <!-- Chart.js for future charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <div class="logo-text">
+        <span class="brand-name">GymFit<span class="highlight">Pro</span></span>
+        <span class="admin">Gym Admin</span>
+      </div>
+    </div>
+    
+    
+    <nav>
+      <ul>
+        <li><a href="owner-admin.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="Subscriber-management.html"><i class="fas fa-users"></i> Manage Users</a></li>
+        <li><a href="coaches.html"><i class="fas fa-users"></i> Trainers</a></li>
+        <li><a href="manage-workout.html"><i class="fas fa-dumbbell"></i> Manage Workouts</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="topbar">
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      <div class="topbar-icons">
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <i class="fas fa-user-shield" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="gymadmin-profile.html">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="login.html" onclick="logout()">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manage Workouts Section -->
+    <div class="manage-workouts-section">
+      <h2>Upload Workout Program</h2>
+      <form class="workout-form" action="upload_workout.php" method="POST" enctype="multipart/form-data">
+        <label for="workout-title">Workout Title:</label>
+        <input type="text" id="workout-title" name="title" required>
+
+        <label for="workout-description">Description:</label>
+        <textarea id="workout-description" name="description" rows="4" required></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="strength">Strength</option>
+          <option value="cardio">Cardio</option>
+          <option value="flexibility">Flexibility</option>
+          <option value="hiit">HIIT</option>
+        </select>
+
+        <label for="workout-file">Upload File (PDF/Video):</label>
+        <input type="file" id="workout-file" name="workout_file" accept=".pdf,.mp4,.mov" required>
+
+        <button type="submit" class="upload-btn">Upload Workout</button>
+      </form>
+
+      <h3>Uploaded Workouts</h3>
+      <div class="uploaded-workouts">
+        <!-- Sample entry -->
+        <div class="workout-card">
+          <h4>Full Body HIIT</h4>
+          <p>High-intensity interval training for full-body conditioning.</p>
+          <span class="category-label">HIIT</span>
+          <a href="#">Download</a>
+        </div>
+        <!-- More dynamic content could be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle dropdowns -->
+  <script>
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    }
+
+    function logout() {
+      // You can enhance this with actual logout logic
+      alert("You have been logged out.");
+    }
+  </script>
+</body>
+</html>

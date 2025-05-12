@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/challenges.css">
+  <link rel="stylesheet" href="css/just walk.css">
+  <link rel="stylesheet" href="just walk.html">
+  <link rel="font" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  <title>GymFitPro Dashboard</title>
+</head>
+<body>
+  
+   <!-- Top Navigation Bar -->
+   <header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">HOME</a>
+                <a href="workout.html" class="nav-item">WORKOUT</a>
+                <a href="plans.html" class="nav-item">PLANS</a>
+                <a href="challenges.html" class="nav-item">CHALLENGES</a>
+                <a href="guide.html" class="nav-item">GUIDES</a>
+                <a href="community.html" class="nav-item">COMMUNITY</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="bookmark.html" class="btn btn-primary">MY BOOKMARKS</a>
+                <a href="donation.html" class="btn btn-secondary">DONATE</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Sidebar with Filters -->
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search ...">
+            </div>
+
+            <!-- Type Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">
+                    TYPE <i class="fas fa-chevron-down"></i>
+                </h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-everything" checked>
+                        <label for="filter-everything">Everything <span>(29)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-strength" checked>
+                        <label for="filter-strength">Strength <span>(22)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-cardio" checked>
+                        <label for="filter-cardio">Cardio <span>(16)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-interval" checked>
+                        <label for="filter-interval">Interval training <span>(8)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-combat" checked>
+                        <label for="filter-combat">Combat <span>(5)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-rpg" checked>
+                        <label for="filter-rpg">RPG fitness <span>(10)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-running" checked>
+                        <label for="filter-running">Running <span>(8)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-addon" checked>
+                        <label for="filter-addon">Addon <span>(13)</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Difficulty Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">
+                    DIFFICULTY <i class="fas fa-chevron-down"></i>
+                </h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-light" checked>
+                        <label for="filter-light">Light <span>(8)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-easy" checked>
+                        <label for="filter-easy">Easy <span>(8)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-normal" checked>
+                        <label for="filter-normal">Normal <span>(32)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-hard" checked>
+                        <label for="filter-hard">Hard <span>(26)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-advanced" checked>
+                        <label for="filter-advanced">Advanced <span>(10)</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">
+                    EQUIPMENT <i class="fas fa-chevron-down"></i>
+                </h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-none" checked>
+                        <label for="filter-none">None <span>(42)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-minimal" checked>
+                        <label for="filter-minimal">Minimal <span>(12)</span></label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter-standard" checked>
+                        <label for="filter-standard">Standard <span>(8)</span></label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    <div class="articles-grid">
+        <div class="article-card">
+          <a href="dailycrunch.html">
+          <img src="ASSETS/IMAGES/MORE/Daily Crunch.jpeg" alt="Daily Crunch"></a>
+          <h3>30-Day Challenge for core strength</h3>
+        </div>
+      
+        <div class="article-card">
+          <a href="atlas.html">
+          <img src="ASSETS/IMAGES/MORE/atlas.jpg" alt="Atlas"></a>
+          <h3>G30-Day Challenge for full body strength</h3>
+        </div>
+      
+        <div class="article-card">
+  
+          <img src="ASSETS/IMAGES/MORE/iron arms.jpg" alt="Iron Arms">
+          <h3>28-Day Challenge for arm strength</h3>
+        </div>
+      
+        <div class="article-card">
+          <img src="ASSETS/IMAGES/MORE/12K Steps.jpeg " alt="12k Steps">
+          <h3>30-Day Challenge to reach 12,000 steps daily</h3>
+        </div>
+      
+        <div class="article-card">
+          <a href="justwalk.html">
+          <img src="ASSETS/IMAGES/MORE/just walk.jpg" alt="just walk"></a>
+          <h3>30-Day Challenge to walk for 60 minutes daily</h3>
+        </div>
+      
+        <div class="article-card">
+          <img src="ASSETS/IMAGES/MORE/power pose.png" alt="Power Pose">
+          <h3>30-Day Challenge to hold the power pose for 2 minutes daily</h3>
+        </div>
+      
+      
+
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Profile</title>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <h3>GymFit<span class="highlight">Pro</span></h3>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="user.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="user-tracker.html">Track Progress</a></li>
+        <li><a href="user-settings.html ">Settings</a></li>
+        <li><a href="login.html" id="logoutBtn">Logout</a></li> <!-- Added logout button -->
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <i class="search-icon fas fa-search"></i> <!-- Fixed search icon -->
+      </div>
+      <div class="topbar-icons">
+        <i class="bell-icon fas fa-bell" onclick="toggleDropdown('notificationDropdown')"></i>
+        <div class="dropdown" id="notificationDropdown">
+          <!-- Dropdown content for notifications -->
+          <p>No new notification</p>
+          
+        </div>
+        <i class="user-icon fas fa-user" onclick="toggleDropdown('userDropdown')"></i>
+        <div class="dropdown" id="userDropdown">
+          <!-- Dropdown content for user menu -->
+          <a href="edit-profile.html">Edit Profile</a>
+          <a href="user-settings.html">Settings</a>
+          <a href="login.html" id="logoutBtn">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+      <div class="profile-header">
+        <img src="/ASSETS/IMAGES/MORE/320495639_883771402982100_6613168455885667056_n.jpg" alt="Profile Picture" class="profile-pic" />
+        <div class="profile-info">
+          <h1>Mr.Pogi</h1>
+          <p class="username">@john_doe</p>
+          <p class="location">Location: The Hague</p>
+        </div>
+      </div>
+
+      <!-- Profile Stats -->
+      <div class="profile-stats">
+        <div class="stat-item">
+          <h2>Challenges Completed</h2>
+          <p>25</p>
+        </div>
+        <div class="stat-item">
+          <h2>Workouts Logged</h2>
+          <p>150</p>
+        </div>
+        <div class="stat-item">
+          <h2>Followers</h2>
+          <p>300</p>
+        </div>
+      </div>
+
+      <!-- Profile Bio -->
+      <div class="profile-bio">
+        <h2>About Me</h2>
+        <p>Fitness enthusiast. I love challenges that push me to my limits. Join me on my journey to become the best version of myself!</p>
+      </div>
+
+      <!-- Edit Profile Button -->
+      <div class="edit-profile-btn">
+        <a href="edit-profile.html" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+
+    // Function to handle logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      // Clear localStorage or sessionStorage if you used them for user session
+      localStorage.removeItem('user');  // Example if you're using localStorage
+      sessionStorage.removeItem('user');  // If you're using sessionStorage
+
+      // Optionally, you can also clear cookies if your session is stored in cookies
+      // document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+      // Redirect to login page (or homepage if you don't have a login page)
+      window.location.href = 'login.html';  // Change to your actual login page path
+    });
+
+    // Dropdown toggle (for notifications and user menu)
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const allDropdowns = document.querySelectorAll('.dropdown');
+
+      allDropdowns.forEach(el => {
+        if (el !== dropdown) el.style.display = 'none';
+      });
+
+      dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.fa-bell') && !e.target.matches('.fa-user')) {
+        document.querySelectorAll('.dropdown').forEach(drop => drop.style.display = 'none');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymFitPro Plans</title>
+  <link rel="stylesheet" href="/CSS/workouts.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">GymFit<span>Pro</span></div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="test.html">Plans</a>
+    <a href="challenges.html">Challenges</a>
+    <a href="#">Guides</a>
+    <a href="#" class="donate-button">Donate</a>
+  </div>
+</nav>
+
+<section class="main-content">
+  <h2>Choose Your Workout Plan</h2>
+  <div class="gym-grid">
+    <div class="gym-card">
+      <img src="/ASSETS/IMAGES/alexandra-tran-fS3tGOkp0xY-unsplash.jpg" alt="Workout 1">
+      <div class="gym-info">
+        <h3>Starter Pack</h3>
+        <div class="location">Beginner Level</div>
+        <div class="badges">
+          <div class="badge">Strength</div>
+          <div class="badge standard">Basic</div>
+        </div>
+        <button class="select-button" onclick="openModal('Starter Pack', 'Perfect for beginners starting their fitness journey.')">Select Plan</button>
+      </div>
+    </div>
+    <div class="gym-card">
+      <img src="/ASSETS/IMAGES/kobe-kian-clata-1iuR19qL7EY-unsplash.jpg" alt="Workout 2">
+      <div class="gym-info">
+        <h3>Intermediate Blast</h3>
+        <div class="location">Intermediate Level</div>
+        <div class="badges">
+          <div class="badge">Cardio</div>
+          <div class="badge">HIIT</div>
+        </div>
+        <button class="select-button" onclick="openModal('Intermediate Blast', 'Take your fitness to the next level with HIIT and Cardio.')">Select Plan</button>
+      </div>
+    </div>
+    <div class="gym-card">
+      <img src="/ASSETS/IMAGES/total body and strength.jpg" alt="Workout 3">
+      <div class="gym-info">
+        <h3>Advanced Shred</h3>
+        <div class="location">Advanced Level</div>
+        <div class="badges">
+          <div class="badge">Strength</div>
+          <div class="badge">Endurance</div>
+        </div>
+        <button class="select-button" onclick="openModal('Advanced Shred', 'Push your limits with our toughest training routines.')">Select Plan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="planModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+  </div>
+</div>
+
+<script>
+function openModal(title, description) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalDescription').textContent = description;
+  document.getElementById('planModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('planModal').style.display = 'none';
+}
+
+// Close the modal when clicking outside the modal content
+window.onclick = function(event) {
+  const modal = document.getElementById('planModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+</script>
+
+</body>
+</html>

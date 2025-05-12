@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymFitPro Admin Dashboard</title>
+  <link rel="stylesheet" href="CSS/subscriber-management.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <span>GymFit<span class="highlight">Pro</span>    
+      <h3><span class="admin">Gym Admin</span></h3>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-users"></i> Manage Users</a></li>
+        <li><a href="coaches.html"><i class="fas fa-users"></i> Trainers</a></li>
+        <li><a href="#"><i class="fas fa-dumbbell"></i> Manage Workouts</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="topbar">
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+    
+      <div class="topbar-icons">
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+    
+        <div class="dropdown-container">
+          <i class="fas fa-user-shield" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="#">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="#">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <h2>Subscriber Management</h2>
+        <div class="subscriber-list" id="subscriber-list"></div>
+      </div>
+  
+      <div class="section">
+        <h2>Messaging</h2>
+        <p>Send updates or announcements to members.</p>
+        <textarea rows="3" class="message-textarea"></textarea>
+        <button class="send-btn">Send Message</button>
+      </div>
+  
+      <div class="section">
+        <h2>Upcoming Appointments (Premium)</h2>
+        <div class="appointment-list" id="appointment-list"></div>
+      </div>
+    </div>
+  </body>
+    <script>
+      const subscribers = [
+        { type: 'Standard', count: 34 },
+        { type: 'Premium', count: 21 }
+      ];
+  
+      const appointments = [
+        {
+          client: 'Jane Doe',
+          trainer: 'Mike Strong',
+          time: 'April 25, 2025 - 2:00 PM'
+        },
+        {
+          client: 'John Smith',
+          trainer: 'Lisa Fit',
+          time: 'April 26, 2025 - 11:00 AM'
+        }
+      ];
+  
+      function renderSubscribers() {
+        const container = document.getElementById('subscriber-list');
+        subscribers.forEach(sub => {
+          const div = document.createElement('div');
+          div.classList.add('card');
+          div.innerHTML = `
+            <div class="subscriber-info">
+              <p><span>${sub.type}:</span> ${sub.count} active members</p>
+              <div class="active-indicator"></div>
+            </div>
+            <div class="subscriber-actions">
+              <button>View Members</button>
+              <button>Upgrade</button>
+              <button>Deactivate</button>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+      }
+  
+      function renderAppointments() {
+        const container = document.getElementById('appointment-list');
+        appointments.forEach(app => {
+          const div = document.createElement('div');
+          div.classList.add('card');
+          div.innerHTML = `
+            <p><span>Client:</span> ${app.client}</p>
+            <p><span>Trainer:</span> ${app.trainer}</p>
+            <p><span>Time:</span> ${app.time}</p>
+            <div class="actions">
+              <button onclick="alert('Approved appointment for ${app.client}')">Approve</button>
+              <button onclick="alert('Cancelled appointment for ${app.client}')">Cancel</button>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+      }
+  
+      renderSubscribers();
+      renderAppointments();
+    </script>
+</html>

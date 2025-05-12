@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymFitPro Dashboard</title>
+  <link rel="stylesheet" href="CSS/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+  
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <span>GymFit<span class="highlight">Pro</span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage2.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#welcomeCard"><i class="fas fa-id-card"></i> My Membership</a></li>
+        <li><a href="homepage2.html"><i class="fas fa-map-marker-alt"></i> Nearby Gyms</a></li>
+        <li><a href="user-trainers.html"><i class="fas fa-user"></i>Trainers</a></li>
+        <li><a href="guide.html"><i class="fas fa-dumbbell"></i> Workout Programs</a></li>
+        <li><a href="test.html"><i class="fas fa-calendar-check"></i> Plans & Guides</a></li>
+        <li><a href="challenges.html"><i class="fas fa-trophy"></i> Challenges</a></li>
+        <li><a href="#"><i class="fas fa-bookmark"></i> Saved Workouts</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <header class="topbar">
+      <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="topbar-icons">
+        <!-- Notification -->
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+        
+        <!-- User -->
+        <div class="dropdown-container">
+          <i class="fas fa-user-circle" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="profile.html">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="#" id="logoutBtn">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    <!-- Content -->
+    <div class="dashboard-content">
+      <div class="card welcome-card" id="welcomeCard">
+        <div class="welcome-header">
+          <div>
+            <h2>Welcome back, <span class="username">User</span>!</h2>
+            <p class="subtext">Your membership is:   <strong class="status">Active</strong></p>
+          </div>
+          <div class="membership-badge">
+            <i class="fas fa-crown"></i>
+            <span>Pro Member</span>
+          </div>
+        </div>
+        <div class="membership-details">
+          <p>Renewal Date: <strong>June 15, 2025</strong></p>
+          <p>Plan: <strong>Annual Premium</strong></p>
+        </div>
+      </div>
+      
+
+      <div class="card">
+        <h3>Recommended for You</h3>
+        <div class="recommendations">
+          <div class="recommend-card">Workout of the Day</div>
+          <div class="recommend-card">Top Plan for Your Level</div>
+          <div class="recommend-card">Challenges to Try</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Progress Tracker</h3>
+        <canvas id="progressChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+  
+    // Function to handle logout
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Clear localStorage or sessionStorage if you used them for user session
+    localStorage.removeItem('user');  // Example if you're using localStorage
+    sessionStorage.removeItem('user');  // If you're using sessionStorage
+
+    // Optionally, you can also clear cookies if your session is stored in cookies
+    // document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    // Redirect to login page (or homepage if you don't have a login page)
+    window.location.href = 'login.html';  // Change to your actual login page path
+  });
+    // Dropdown toggle (for notifications and user menu)
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const allDropdowns = document.querySelectorAll('.dropdown');
+  
+      allDropdowns.forEach(el => {
+        if (el !== dropdown) el.style.display = 'none';
+      });
+  
+      dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
+    }
+  
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.fa-bell') && !e.target.matches('.fa-user-circle')) {
+        document.querySelectorAll('.dropdown').forEach(drop => drop.style.display = 'none');
+      }
+    });
+  
+    // Chart.js Progress Tracker
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Workout Hours',
+          data: [2, 4, 5, 6],
+          backgroundColor: 'rgba(255, 107, 0, 0.2)',
+          borderColor: 'rgba(255, 107, 0, 1)',
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: '#ff6b00'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255,255,255,0.1)' }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255,255,255,0.1)' }
+          }
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/donation.css">
+  <link rel="font" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  <title>Donation</title>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-item ">HOME</a>
+                <a href="workout.html" class="nav-item">WORKOUT</a>
+                <a href="plans.html" class="nav-item">PLANS</a>
+                <a href="challenges.html" class="nav-item">CHALLENGES</a>
+                <a href="guide.html" class="nav-item">GUIDES</a>
+                <a href="community.html" class="nav-item">COMMUNITY</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="bookmark.html" class="btn btn-primary">MY BOOKMARKS</a>
+                <a href="donation.html" class="btn btn-secondary">DONATE</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+  <main>
+    <h1>Support Us with Your Donation</h1>
+    <p>Your contributions help us continue our mission. Thank you for your generosity!</p>
+    
+    <div class="donate-container">
+      <form action="process_donation.php" method="POST">
+        <label for="donation-amount">Donation Amount (₱):</label>
+        <input type="number" id="donation-amount" name="donation_amount" required min="1" step="0.01">
+
+        <label for="donor-name">Your Name:</label>
+        <input type="text" id="donor-name" name="donor_name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment_method" required>
+          <option value="credit_card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bank_transfer">Bank Transfer</option>
+        </select>
+
+        <button type="submit" class="donate-submit">Donate Now</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GymFitPro. All
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner_Sign-up</title>
+  <link rel="stylesheet" href="CSS/owner-signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="signup-container">
+    <h2>Create Your Gym</h2>
+    <form>
+      <div class="form-group">
+        <label for="gymName">Gym Name</label>
+        <input type="text" id="gymName" placeholder="Enter Gym Name" required />
+      </div>
+      <div class="form-group">
+        <label for="ownerName">Owner Name</label>
+        <input type="text" id="ownerName" placeholder="Enter full name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter email" required />
+      </div>
+      <div class="form-group">
+        <label for="location">Gym Location</label>
+        <input type="text" id="location" placeholder="Enter Address" required />
+      </div>
+      <div class="form-group">
+        <label for="membership">Membership Types Offered</label>
+        <select id="membership">
+          <option value="both">Premium & Standard</option>
+          <option value="premium">Premium Only</option>
+          <option value="standard">Standard Only</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create Password" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input type="password" id="password" placeholder="Confirm Password" required />
+      </div>
+      <button type="submit" class="submit-btn">Create Account</button>
+      <div class="login-link">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

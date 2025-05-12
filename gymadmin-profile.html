@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymFitPro Admin Profile</title>
+  <link rel="stylesheet" href="CSS/gymadmin-profile.css" />
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i>
+      <div class="logo-text">
+        <span class="brand-name">GymFit<span class="highlight">Pro</span></span>
+        <span class="admin">Gym Admin</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="owner-admin.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="Subscriber-management.html"><i class="fas fa-users"></i> Manage Users</a></li>
+        <li><a href="coaches.html"><i class="fas fa-users"></i> Trainers</a></li>
+        <li><a href="manage-workout.html"><i class="fas fa-dumbbell"></i> Manage Workouts</a></li>
+        <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      <div class="topbar-icons">
+        <div class="dropdown-container">
+          <i class="fas fa-bell" onclick="toggleDropdown('notifDropdown')"></i>
+          <div class="dropdown" id="notifDropdown">
+            <p>No new notifications</p>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <i class="fas fa-user-shield" onclick="toggleDropdown('userDropdown')"></i>
+          <div class="dropdown" id="userDropdown">
+            <p><a href="gymadmin-profile.html">Profile</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="login.html" onclick="logout()">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+
+      <div class="profile-header">
+        <img src="/ASSETS/IMAGES/MORE/admin-profile.jpg" alt="Profile Picture" class="profile-pic" />
+        <div class="profile-info">
+          <h1>Admin Walter White</h1>
+          <p class="username">@Heisenberg</p>
+          <p class="location">Location: The Hague</p>
+        </div>
+      </div>
+
+      <div class="profile-stats">
+        <div class="stat-item">
+          <h2>Total Members</h2>
+          <p>500</p>
+        </div>
+        <div class="stat-item">
+          <h2>Challenges Managed</h2>
+          <p>30</p>
+        </div>
+        <div class="stat-item">
+          <h2>Workouts Logged</h2>
+          <p>1000</p>
+        </div>
+      </div>
+
+      <div class="profile-bio">
+        <h2>About Me</h2>
+        <p>
+          As the gym administrator, I ensure smooth operations, manage member progress,
+          and design new challenges to help members achieve their fitness goals.
+          Let's take the gym to new heights!
+        </p>
+      </div>
+
+      <div class="admin-actions">
+        <a href="Subscriber-management.html" class="btn">Manage Users</a>
+        <a href="manage-workout.html" class="btn">Create New Challenge</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown + Logout Script -->
+  <script>
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    }
+
+    function logout() {
+      alert("You have been logged out.");
+    }
+
+    window.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown-container")) {
+        document.querySelectorAll(".dropdown").forEach(drop => drop.style.display = "none");
+      }
+    });
+  </script>
+</body>
+</html>
