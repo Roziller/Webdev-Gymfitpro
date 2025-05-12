@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="font" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>GymFitPro Dashboard</title>
+</head>
+<body>
+
+  
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    <div class="logo" ><a href="#home"></a>GymFit<span>Pro</span></div>
+      <div class="search-section">
+        <div class="search-container">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Search..." class="search-input">
+          <!-- <div class="user-actions">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user-circle" style="margin-left: 15px;"></i>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+     <!-- Welcome Card -->
+     <div class="card">
+      <h2>Welcome, User</h2>
+      <p>Active Membership</p>
+    </div>
+
+    <!-- Recommended for You -->
+    <div class="card">
+      <h3>Recommended for You</h3>
+      <div class="recommended">
+        <div class="recommend-card">Workout of the Day</div>
+        <div class="recommend-card">Top Plan for Your Level</div>
+        <div class="recommend-card">Challenge to Try</div>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Placeholder -->
+    <div class="progress-tracker">
+      <h3>Progress Tracker</h3>
+      <p>[Progress chart goes here]</p>
+    </div>
+
+  </div>
+
+    
+    <section class="sidebar-section">
+        <div class="sidebar-li" id="sidebar">
+          <nav>
+            <ul>
+              <button><a href="#welcome"><i class="fas fa-home"></i> Welcome</a></button>
+            </ul>
+            <ul>
+              <button><a href="#membership"><i class="fas fa-id-card"></i> My Membership</a></button>
+            </ul>
+            <ul>
+              <button><a href="#gyms"><i class="fas fa-map-marker-alt"></i> Nearby Gyms</a></button>
+            </ul>
+            <ul>
+              <button><a href="#workouts"><i class="fas fa-dumbbell"></i> Workout Programs</a></button>
+            </ul>
+            <ul>
+              <button><a href="#plans"><i class="fas fa-calendar-check"></i> Plans and Guides</a></button>
+            </ul>
+            <ul>
+              <button><a href="#challenges"><i class="fas fa-trophy"></i> Challenges</a></button>
+            </ul>
+            <ul>
+              <button><a href="#saved"><i class="fas fa-bookmark"></i> Saved Workouts</a></button>
+            </ul>
+          </nav>
+        </div>
+
+      
+        
+    </body>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+      }
+    </script>
+</html>
