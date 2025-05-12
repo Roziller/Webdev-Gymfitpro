@@ -1,0 +1,39 @@
+.about-section {
+  text-align: center;
+  padding-top: 120px;
+  animation: fadeInUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+
+#about .section-header{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: flex ;
+  text-align: center;
+  justify-content: center;
+}
+
+/* .about-details{
+  min-height: 100vh;
+} */
+
+.about-details .about-intro p {
+  font-size: 1.3rem;
+
+}
+
+
+#about {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

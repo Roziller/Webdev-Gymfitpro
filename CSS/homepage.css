@@ -1,0 +1,495 @@
+body {
+  margin: 0;
+  font-family: "Poppins";
+  color: rgb(255, 255, 255);
+  background-image: url("/ASSETS/IMAGES/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: -1;
+}
+
+.navbar {
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  padding-left: 50px  ;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+.navbar .logo {
+  font-family:"Poppins", sans-serif;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.navbar .logo span {
+  color: #ff6b00;
+}
+
+.navbar .nav-links a {
+  color:#ccc;
+  cursor: pointer;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 1.25rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.nav-links a:hover {
+  color: #ff6b00;
+}
+
+
+
+.sidebar-container {
+  position:fixed;
+  left: 0;
+  height: calc(100vh - 60px);
+  z-index: 1000;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: auto 0;
+}
+
+.search button {
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #333;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown p {
+  margin: 8px 0;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.dropdown a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  color: #ff6b00;
+}
+
+
+.sidebar {
+  width: 60px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 0; 
+  margin: 0; 
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  transition: width 0.3s ease, padding 0.3s ease;
+  position: sticky;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 10px;
+}
+
+.sidebar:hover,
+.sidebar.pinned {
+  width: 260px;
+  padding: 20px 15px;
+}
+
+.sidebar * {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar:hover *:not(.sidebar-icon),
+.sidebar.pinned *:not(.sidebar-icon) {
+  opacity: 1;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 0px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.search-box::placeholder {
+  color: #ccc;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.filter-title {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #fff;
+  font-family: Poppins;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-options label {
+  display: flex;
+  align-items: center;
+  margin:20px ;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #eee;
+}
+
+.filter-options input[type="checkbox"] {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  accent-color: #ff6600;
+}
+
+.card {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 250px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+.card-info :hover
+{
+  color: #ff6b00;
+}
+
+.info-box {
+  background-color: #222;
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  flex: 1 1 40%;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.info-box span {
+  font-weight: bold;
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.info-box.danger {
+  border-color: red;
+  color: red;
+  font-weight: bold;
+}
+
+.info-box.danger small {
+  display: block;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.card-container {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 250px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-box {
+  background-color: #222;
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  flex: 1 1 45%;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.info-box span {
+  font-weight: bold;
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.info-box.danger {
+  border-color: red;
+  color: red;
+  font-weight: bold;
+}
+
+.info-box.danger small {
+  display: block;
+  font-size: 10px;
+  color: #aaa;
+}
+
+label {
+  color: white;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.filter-options label {
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 13px;;
+  color: #fff;
+  user-select: none;
+  font-weight: bold;
+}
+
+.filter-options input[type="checkbox"]:checked + label::before {
+  background-color: #ff6b00;
+  border-color: #ff6b00;
+}
+
+
+
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .navbar .nav-links a {
+    margin: 5px 0;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar-container {
+    position: static;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo {
+    font-size: 1.2rem;
+  }
+
+  .search-box {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .card-container {
+    gap: 10px;
+  }
+}
+
+  
+

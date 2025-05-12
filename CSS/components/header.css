@@ -1,0 +1,48 @@
+header {
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s ease;
+}
+
+header.hide-on-scroll {
+  top: -100px; /* Adjust depending on header height */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-logo-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.accent {
+  color: #ff6b00;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6b00;
+}
+

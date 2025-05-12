@@ -1,0 +1,21 @@
+.get-started-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: #ff6b00;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.get-started-btn:hover {
+  background: #e55b00;
+  transform: translateY(-2px);
+  opacity: 0.4s;
+}
+
+.get-started-btn active {
+  opacity:0.4s;
+}

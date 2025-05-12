@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+
+  .navigation-bar {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+  
+  .nav-item {
+    display: inline;
+    margin: 0 15px;
+  }
+
+ .nav-item:hover {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+    }
+
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .nav-button {
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .bookmarks-button {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .donate-button {
+    background-color: #888;
+    color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+  }
+  
+  .poster {
+    position: relative;
+    width: 100%;
+    max-width: 900px; 
+  }
+  
+  .workout-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    border: 6px solid #fff;
+    object-fit: cover;
+  }
+
+
+
+.workout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  background-color: rgb(229, 231, 235);
+}
+
+/* Header image styles */
+.header-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Content section styles */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1.25rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  max-width: 1093px;
+}
+
+/* Workout description styles */
+.workout-description {
+  margin-bottom: 1.25rem;
+  width: 100%;
+  max-width: 705px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: black;
+}
+
+.workout-description p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.workout-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Workout image styles */
+.workout-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 991px) {
+  .workout-container {
+    max-width: 991px;
+  }
+
+  .content-section {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .workout-container {
+    max-width: 640px;
+  }
+
+  .content-section {
+    padding: 0 0.625rem;
+  }
+
+  .workout-description {
+    font-size: 0.875rem;
+  }
+}
